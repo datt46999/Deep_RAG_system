@@ -15,35 +15,72 @@ import sys
 
 from dotenv import load_dotenv
 
-from langchain.document_loaders  import PyPDFLoader
-from langchain.text_slitter import RecursiveCharacterTextSplitter
-from langchain.vectorstores import FAISS
+from langchain_community.document_loaders import PyPDFLoader 
+from langchain_text_splitters import RecursiveCharacterTextSplitter
+from langchain_community.vectorstores import FAISS
 
 
-from RAG_technique.helper_functions import (EmbeddingProvider,
+from helper_functions import (EmbeddingProvider,
                               retrieve_context_per_question,
                               replace_t_space,
                               get_langchain_embedding_provider,
                               show_context, encode_pdf)
 
-from RAG_technique.evaluation.evalute_rag import evaluate_rag
+from evaluation.evalute_rag import evaluate_rag
 load_dotenv()
 
+def encode_pdf(path, chunk_size = 1000, chunk_overlap = 200):
+    loader = PyPDFLoader(path)
+    docs = loader.load()
 
-def process(path, test_query ):
+    splitter = RecursiveCharacterTextSplitter(
+        chunk_size = chunk_size,
+        chunk_overlap = chunk_overlap,
+        length_function = len
+    )
 
-    chunks_vector_store = encode_pdf(path, chunk_size=1000, chunk_overlap=200)
-    chunks_query_retriever = chunks_vector_store.as_retriever(search_kwargs={"k": 2})
-    
-    context = retrieve_context_per_question(test_query, chunks_query_retriever)
-    show_context(context)
+    texts = splitter.split_documents(docs)
+    clean_texts = replace_t_space(texts)
 
-    return chunks_query_retriever
+
+    embeddings =  get_langchain_embedding_provider(EmbeddingProvider.OPENAI)
+
+    vectorstore = FAISS.from_documents(clean_texts, embeddings)
+    return vectorstore
 
 
 if __name__ == "__main__":
-    path = ""
+    path = "data/Understanding_Climate_Change.pdf"
     test_query = "What is the main cause of climate change?"
-    test = process(path=path, test_query=test_query)
+    chunks_vector_store = encode_pdf(path, chunk_size=1000, chunk_overlap= 200)
+    chunks_query_retriever = chunks_vector_store.as_retriever(search_kwargs={"k": 2})
+    test_query = "What is the main cause of climate change?"
+    context = retrieve_context_per_question(test_query, chunks_query_retriever)
+    show_context(context)
 
-    evaluate_rag(test)
+    eval_result = evaluate_rag(chunks_query_retriever)
+    # from langchain_openai import OpenAIEmbeddings
+    # embeddings = OpenAIEmbeddings()
+    # print(embeddings.model  )
+    import json
+    output_path = f"Eval_simple_rag.json"
+
+    with open(output_path, "w", encoding="utf-8") as f:
+        json.dump(eval_result, f, indent=2, ensure_ascii=False)
+
+    print(f"Eval results saved to {output_path}")
+
+
+
+
+
+# from langchain_community.document_loaders import DirectoryLoader, UnstructuredFileLoader
+# loader = DirectoryLoader(
+#     path = "../paper_vis",
+#     glob = "**/*.pdf",
+#     loader_cls = UnstructuredFileLoader,
+#     show_progress = True,
+#     use_multithreading= True
+# )
+
+    

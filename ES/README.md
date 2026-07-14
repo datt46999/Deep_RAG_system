@@ -1,0 +1,2 @@
+## Introduction
+Building a Retrieval-Augmented Generation (RAG) powered by Elasticsearch (ES) and Hugging Face models, letting you toggle between ES-vectorising (your ES cluster vectorises for you when ingesting and querying) vs self-vectorising (you vectorise all your data before sending it to ES).

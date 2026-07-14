@@ -8,13 +8,14 @@ import random
 from typing import List
 
 from pydantic import BaseModel, Field
-from rank_bm5 import BM250kapi
+
+from rank_bm25 import BM25Okapi
 from openai import RateLimitError
 from enum import Enum
 
-from langchain_community.documents_loaders import PyPDFLoader
+from langchain_community.document_loaders import PyPDFLoader
 from langchain_community.vectorstores import FAISS
-from langchain_text_splitters import RecusiveCharacterTextSplitter
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_openai import OpenAIEmbeddings
 from langchain_core.prompts import PromptTemplate
 
@@ -57,7 +58,7 @@ def encode_pdf(path, chunk_size = 1000, chunk_overlap = 250):
     loader = PyPDFLoader(path)
     docs = loader.load()
 
-    splitter = RecusiveCharacterTextSplitter(
+    splitter =  RecursiveCharacterTextSplitter(
         chunk_size = chunk_size,
         chunk_overlap = chunk_overlap,
         length_function = len
@@ -94,7 +95,7 @@ def encode_from_string(content, chunk_size = 1000, chunk_overlap = 250):
         raise ValueError("Chunk overload must be possible interger")
     
     try:
-        splitter = RecusiveCharacterTextSplitter(
+        splitter = RecursiveCharacterTextSplitter(
             chunk_size = chunk_size,
             chunk_overlap = chunk_overlap,
             length_function = len,
@@ -125,8 +126,8 @@ def retrieve_context_per_question(question, chunk_query_retriever):
     - s list of unique URLs from the metadata of the relevant document
     """
     # retriver relevant document for the given question
-    docs = chunk_query_retriever.get_relevant_documents(question)
-    
+    docs = chunk_query_retriever.invoke(question)
+     
     # concatanate document content
     # context = " ".join(doc.page_content for doc in docs)
     context = [doc.page_content for doc in docs]
@@ -195,7 +196,7 @@ def show_context(context):
     context: a list of context items to be displayed
     prints each context item in the list with a heading indicating its position
     """
-    for i, c in context:
+    for i, c in enumerate(context):
         print(f"context {i}")
         print(c)
         print('\n')
@@ -225,7 +226,7 @@ def read_pdf_of_string(path):
         content += page.get_text()
     return content
 
-def bm25_retrieval(bm25: BM250kapi, cleaned_texts: List[str], query:str, k: int = 5)-> List[str]:
+def bm25_retrieval(bm25: BM25Okapi, cleaned_texts: List[str], query:str, k: int = 5)-> List[str]:
     """
     Perform BM25 retrieval and return the top k cleaned text chunks.
 
