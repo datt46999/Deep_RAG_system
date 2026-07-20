@@ -140,7 +140,7 @@ def encode_pdf(path, chunk_size = 1000, chunk_overlap = 200):
 
 if __name__ == "__main__":
     PATH = "data/Understanding_Climate_Change.pdf"
-
+ 
     chunks_vector_store = encode_pdf(PATH)
     chunks_query_retriever = chunks_vector_store.as_retriever(search_kwargs={"k": 3})
 
