@@ -4,6 +4,15 @@
 Retrieval-Augmented Generation (RAG) is revolutionizing the way we combine information retrieval with generative AI. This repository showcases a curated collection of advanced techniques designed to supercharge your RAG systems, enabling them to deliver more accurate, contextually relevant, and comprehensive responses.
 
 ---
+## 📌 Quick Directory Index
+
+* [🌱 Foundational RAG Techniques](#-foundational-rag-techniques) (4 files)
+* [🚀 Query Enhancement](#-query-enhancement) (3 files)
+* [📚 Context Enrichment](#-context-enrichment) (6 files)
+* [⚡ Advanced Retrieval](#-advanced-retrieval) (5 files)
+* [🎯 Advanced RAG Architectures](#-advanced-rag-architectures) (5 files)
+
+---
 
 ## 🌱 Foundational RAG Techniques
 
@@ -53,3 +62,28 @@ An advanced text processing approach that splits documents based on semantic tra
 
 ### 5. Contextual Compression 📚 [<img src="https://img.shields.io/badge/GitHub-View-blue" height="20">](https://github.com/datt46999/Deep_RAG_system/blob/main/RAG_technique/Context_enrichment/compression.py) 
 Utilizes LangChain and OpenAI to compress and extract only the most pertinent sentences from retrieved documents. By stripping out irrelevant noise before passing context to the prompt, it reduces costs and minimizes LLM distraction.
+
+### 6. Augmentation technique 📚 [<img src="https://img.shields.io/badge/GitHub-View-blue" height="20">](https://github.com/datt46999/Deep_RAG_system/blob/main/RAG_technique/Context_enrichment/document_augmentation.py) 
+This implementation demonstrates a text augmentation technique the leverages additional question generate to improve document retriever within a vector database.
+
+---
+## 🚀 Advance Retrieval
+
+### 1. Fusion retrieval 🚀 [<img src="https://img.shields.io/badge/GitHub-View-blue" height="20">](https://github.com/datt46999/Deep_RAG_system/blob/main/RAG_technique/Advance_RAG/fusion_retrieval.py) 
+Fusion retrieval aims to combine these methods to create a more robust and accurate retrieval system that can handle a wider range of queries effectively.
+### 2. Multimodel retrieval 🚀 [<img src="https://img.shields.io/badge/GitHub-View-blue" height="20">](https://github.com/datt46999/Deep_RAG_system/blob/main/RAG_technique/Advance_RAG/multimodel.py) 
+Extracts and processes text and images from PDFs,
+utilizing a multi-modal Retrieval-Augmented Generation (RAG) system for
+summarizing and retrieving content for question answering.
+
+### 3. Reranking 🚀 [<img src="https://img.shields.io/badge/GitHub-View-blue" height="20">](https://github.com/datt46999/Deep_RAG_system/blob/main/RAG_technique/Advance_RAG/Reranking.py) 
+Reranking in RAG systems is to overcome limitations of initial retrieval methods, which often rely on simpler similarity metrics. 
+
+### 4. Hierachical retrieval 🚀 [<img src="https://img.shields.io/badge/GitHub-View-blue" height="20">](https://github.com/datt46999/Deep_RAG_system/blob/main/RAG_technique/Advance_RAG/hierarchical.py) 
+Implements a Hierarchical index system for document retrieval, utilizing two level for encoding: document level summaries and detail chunking.
+
+### 5. DartBoard retrieval 🚀 [<img src="https://img.shields.io/badge/GitHub-View-blue" height="20">](https://github.com/datt46999/Deep_RAG_system/blob/main/RAG_technique/Advance_RAG/dartboard.py) 
+The DartBoard RAG process addresses a common challenge in large knowledge base: ensuring the retrieved information in both relevant and no-relevant.
+By explicitly optimizing a combined relevance-diversity scoring function, it prevents top-k documents from offering same information.
+
+

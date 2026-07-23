@@ -83,3 +83,15 @@ compressing and extracting the most pertinent parts of documents in the context 
 3. LLM-based contextual compressor
 4. Contextual compression retriever
 5. Question-answering chain integrating the compressed retriever
+
+
+# Augmentation technique
+This implementation demonstrates a text augmentation technique the leverages additional question generate to improve document retriever within a vector database.
+By generating and incorporating  various question related of each text fragment,this system enhance retrievel process, 
+thus increasing the likelihood of of finding  relevant documents that can be utilized as context for generative question answering
+
+Key components:
+1.  PDF processing and text chunking:
+2. Question Augmentation: generating relevant question as both document and fragment level using Open Ai
+2. Vectorstore creation: Calculating embeddings for documents using OpenAI's embedding model and creating a FAISS vector store.
+4. Retrieval and answer generate: Finding the most relevant document using FAISS and generating answers based on the context provided.
