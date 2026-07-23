@@ -9,7 +9,7 @@ Retrieval-Augmented Generation (RAG) is revolutionizing the way we combine infor
 * [🌱 Foundational RAG Techniques](#-foundational-rag-techniques) (4 files)
 * [🚀 Query Enhancement](#-query-enhancement) (3 files)
 * [📚 Context Enrichment](#-context-enrichment) (6 files)
-* [⚡ Advanced Retrieval](#-advanced-retrieval) (5 files)
+* [⚡ Advanced Retrieval](#-advance-retrieval) (5 files)
 * [🎯 Advanced RAG Architectures](#-advanced-rag-architectures) (5 files)
 
 ---
