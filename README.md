@@ -71,12 +71,12 @@ This implementation demonstrates a text augmentation technique the leverages add
 
 ### 1. Fusion retrieval 🚀 [<img src="https://img.shields.io/badge/GitHub-View-blue" height="20">](https://github.com/datt46999/Deep_RAG_system/blob/main/RAG_technique/Advance_RAG/fusion_retrieval.py) 
 Fusion retrieval aims to combine these methods to create a more robust and accurate retrieval system that can handle a wider range of queries effectively.
-### 2. Multimodel retrieval 🚀 [<img src="https://img.shields.io/badge/GitHub-View-blue" height="20">](https://github.com/datt46999/Deep_RAG_system/blob/main/RAG_technique/Advance_RAG/multimodel.py) 
+### 2. Multimodel retrieval 🚀 [<img src="https://img.shields.io/badge/GitHub-View-blue" height="20">](https://github.com/datt46999/Deep_RAG_system/blob/main/RAG_technique/Advance_RAG/mutilmodel.py) 
 Extracts and processes text and images from PDFs,
 utilizing a multi-modal Retrieval-Augmented Generation (RAG) system for
 summarizing and retrieving content for question answering.
 
-### 3. Reranking 🚀 [<img src="https://img.shields.io/badge/GitHub-View-blue" height="20">](https://github.com/datt46999/Deep_RAG_system/blob/main/RAG_technique/Advance_RAG/Reranking.py) 
+### 3. Reranking 🚀 [<img src="https://img.shields.io/badge/GitHub-View-blue" height="20">](https://github.com/datt46999/Deep_RAG_system/blob/main/RAG_technique/Advance_RAG/Ranking.py) 
 Reranking in RAG systems is to overcome limitations of initial retrieval methods, which often rely on simpler similarity metrics. 
 
 ### 4. Hierachical retrieval 🚀 [<img src="https://img.shields.io/badge/GitHub-View-blue" height="20">](https://github.com/datt46999/Deep_RAG_system/blob/main/RAG_technique/Advance_RAG/hierarchical.py) 
