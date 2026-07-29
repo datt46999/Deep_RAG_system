@@ -59,8 +59,6 @@ def embedding2vectore(data):
     return vectorstore
 
 
-
-
 if __name__ == "__main__":
     llm = ChatOpenAI(model="gpt-4o-mini")
 
