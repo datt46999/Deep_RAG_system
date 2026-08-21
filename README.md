@@ -10,7 +10,8 @@ Retrieval-Augmented Generation (RAG) is revolutionizing the way we combine infor
 * [🚀 Query Enhancement](#-query-enhancement) (3 files)
 * [📚 Context Enrichment](#-context-enrichment) (6 files)
 * [⚡ Advanced Retrieval](#-advance-retrieval) (5 files)
-* [🎯 Advanced RAG Architectures](#-advanced-rag-architectures) (5 files)
+* [⚡ Iteractive](#-iteractive) (2 files)
+* [🎯 Advanced RAG Architectures](#--advanced-rag-architectures) (7 files)
 
 ---
 
@@ -85,5 +86,50 @@ Implements a Hierarchical index system for document retrieval, utilizing two lev
 ### 5. DartBoard retrieval 🚀 [<img src="https://img.shields.io/badge/GitHub-View-blue" height="20">](https://github.com/datt46999/Deep_RAG_system/blob/main/RAG_technique/Advance_RAG/dartboard.py) 
 The DartBoard RAG process addresses a common challenge in large knowledge base: ensuring the retrieved information in both relevant and no-relevant.
 By explicitly optimizing a combined relevance-diversity scoring function, it prevents top-k documents from offering same information.
+
+
+## 🚀 Iteractive
+
+### 1. Query Transformation 🌱 [<img src="https://img.shields.io/badge/GitHub-View-blue" height="20">](https://github.com/datt46999/Deep_RAG_system/blob/main/RAG_technique/Iteractive/adaptive_retrieval.py) 
+
+
+Adaptive Retrieval Augumented Generation system
+Implement advanced  retriever augumented generation approach that adapts its retrieval strategy base on type of query. By leveraging LLM in various stages, it aims to provide more accuracy, relevant, and context response to user queries
+
+### 2. Hypothetical Document Embedding (HyDE) 🌱 [<img src="https://img.shields.io/badge/GitHub-View-blue" height="20">](https://github.com/datt46999/Deep_RAG_system/blob/main/RAG_technique/Iteractive/retrieval_feedbackloop.py) 
+ Implment RAG approach  with an interagted feed backloop. 
+ It aim to improve the quality of relevance over time by incorporate user feed back and dynamically adjusting the retrieval process
+
+
+ ## 📚  Advanced RAG Architectures
+
+
+
+### 1. Hypothetical Document Embedding  🌱 [<img src="https://img.shields.io/badge/GitHub-View-blue" height="20">](https://github.com/datt46999/Deep_RAG_system/blob/main/RAG_technique/Advanced_architectures/RAGTOR.py) 
+RAGTOR: advanced infomation retrieved and question-answer system combine hierachical document summarization, embedding base-on retrieval, and context answer generation.
+Is aims to efficiently handle large documents connection.
+
+
+### 2. Corrective RAG 🌱 [<img src="https://img.shields.io/badge/GitHub-View-blue" height="20">](https://github.com/datt46999/Deep_RAG_system/blob/main/RAG_technique/Advanced_architectures/RAGTOR.py) 
+Corrective RAG process is an advanced information retrieval and response generationg system.
+It extends the standards RAG approach by dynamically evaluation and connecting the retrieval process, combine the power of vectore databases, web search, LLM to provide the accurate and context-aware
+response to user queries.
+### 3. Self-RAG 🌱 [<img src="https://img.shields.io/badge/GitHub-View-blue" height="20">](https://github.com/datt46999/Deep_RAG_system/blob/main/RAG_technique/Advanced_architectures/RAGTOR.py) 
+Self-Rag is an advanced algorithm that combines the power of the retrieval-based and generation-based approaches in NLP.
+It dynamically dicides Whether to use retriever information and how to best utilize it in generating responses, aim to produce more accurate,
+relevant and useful output.
+
+
+### 4.Agentic RAG 🌱 [<img src="https://img.shields.io/badge/GitHub-View-blue" height="20">](https://github.com/datt46999/Deep_RAG_system/blob/main/RAG_technique/Advanced_architectures/Agentic_rag_pipeline) 
+
+Agentic RAG involves iterative calls to the LLM, interspersed with tool or function calls and structured outputs. The system evaluates results, refines queries, invokes additional tools if needed, and continues this cycle until a satisfactory solution is achieved. This iterative “maker-checker” style improves correctness, handles malformed queries, and ensures high-quality results.
+
+
+### 5. Graph RAG 🌱 [<img src="https://img.shields.io/badge/GitHub-View-blue" height="20">](https://github.com/datt46999/Deep_RAG_system/blob/main/RAG_technique/Advanced_architectures/graph_rag.py) 
+
+Graph RAG is an advanced question-answering system that combines the power of graph base knowledge represetaion with retrieval-argumented generation.
+It processes input documents to create a rich knowledge graph, which is then use to enchance the retrieval and generation of answer to user queries.
+The system leverages natural language processin, MC, and graph theory to provide more accurace and contextually relevant responses
+
 
 
