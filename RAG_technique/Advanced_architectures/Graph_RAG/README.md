@@ -87,7 +87,7 @@ The idead: throught **Community Report** in **Global search** to extract the sui
 ![alt text](../../image/DRIFT.png)
 
 ### 4. Basic search
-traddition search
+Traditional search
 
 ## Methobs details at graph_rag.py:
 1. Document Processing
