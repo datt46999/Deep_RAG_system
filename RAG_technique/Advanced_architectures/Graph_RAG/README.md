@@ -22,7 +22,7 @@ Overal Graph RAG will have 2 phase:
 
 ## Indexing
 ### Basic graph RAG
-![alt text](../image/Basic_graph.png)
+![alt text](../../image/Basic_graph.png)
 
 
 Indexing in GraphRAG was design like workflow module, each workflow will read data and save at each artifact(parwuet). All the output will be normalize by one Knowledge Model 
