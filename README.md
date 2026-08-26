@@ -125,7 +125,7 @@ relevant and useful output.
 Agentic RAG involves iterative calls to the LLM, interspersed with tool or function calls and structured outputs. The system evaluates results, refines queries, invokes additional tools if needed, and continues this cycle until a satisfactory solution is achieved. This iterative “maker-checker” style improves correctness, handles malformed queries, and ensures high-quality results.
 
 
-### 5. Graph RAG 🌱 [<img src="https://img.shields.io/badge/GitHub-View-blue" height="20">](https://github.com/datt46999/Deep_RAG_system/blob/main/RAG_technique/Advanced_architectures/graph_rag.py) 
+### 5. Graph RAG 🌱 [<img src="https://img.shields.io/badge/GitHub-View-blue" height="20">](https://github.com/datt46999/Deep_RAG_system/blob/main/RAG_technique/Advanced_architectures/Graph_RAG/graph_rag.py) 
 
 Graph RAG is an advanced question-answering system that combines the power of graph base knowledge represetaion with retrieval-argumented generation.
 It processes input documents to create a rich knowledge graph, which is then use to enchance the retrieval and generation of answer to user queries.
